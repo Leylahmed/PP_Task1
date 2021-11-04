@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
+#include <omp.h>
 
 using namespace std;
 
@@ -20,6 +22,7 @@ int main()
 
 	srand((int)time(0));
 
+#pragma omp parallel for
 	for (int i = 0; i < n; i++) {
 
 		arr[i] = rand() % 10;
